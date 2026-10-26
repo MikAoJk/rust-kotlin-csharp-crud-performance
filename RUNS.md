@@ -33,8 +33,7 @@ C#
     vus............................: 1       min=1            max=200
     vus_max........................: 200     min=200          max=200
 
-    NETWORK
-    data_received
+    
 Kotlin
 
 █ TOTAL RESULTS
@@ -70,10 +69,6 @@ Kotlin
     vus............................: 1      min=1           max=200
     vus_max........................: 200    min=200         max=200
 
-    NETWORK
-    data_received..................: 1.3 GB 3.1 MB/s
-    data_sent......................: 133 MB 317 kB/s
-
 Rust
 
 █ TOTAL RESULTS
@@ -108,7 +103,3 @@ Rust
     iterations.....................: 147537  351.269926/s
     vus............................: 1       min=1            max=200
     vus_max........................: 200     min=200          max=200
-
-    NETWORK
-    data_received..................: 31 GB   74 MB/s
-    data_sent......................: 158 MB  377 kB/s
