@@ -81,9 +81,9 @@ Rust
 
 █ TOTAL RESULTS
 
-    checks_total.......: 459214  1093.359424/s
-    checks_succeeded...: 100.00% 459214 out of 459214
-    checks_failed......: 0.00%   0 out of 459214
+    checks_total.......: 709730  1689.831087/s
+    checks_succeeded...: 100.00% 709730 out of 709730
+    checks_failed......: 0.00%   0 out of 709730
 
     ✓ create: status is 200
     ✓ create: response body matches
@@ -101,17 +101,17 @@ Rust
     ✓ read deleted: response body matches
 
     HTTP
-    http_req_duration..............: avg=225.45ms min=374.76µs med=198.78ms max=13.99s p(90)=299.84ms p(95)=321.24ms
-      { expected_response:true }...: avg=225.45ms min=374.76µs med=198.78ms max=13.99s p(90)=299.84ms p(95)=321.24ms
-    http_req_failed................: 0.00%  0 out of 229607
-    http_reqs......................: 229607 546.679712/s
+    http_req_duration..............: avg=145.79ms min=263.53µs med=105.74ms max=11.39s p(90)=199.94ms p(95)=203.74ms
+      { expected_response:true }...: avg=145.79ms min=263.53µs med=105.74ms max=11.39s p(90)=199.94ms p(95)=203.74ms
+    http_req_failed................: 0.00%  0 out of 354865
+    http_reqs......................: 354865 844.915543/s
 
     EXECUTION
-    iteration_duration.............: avg=1.58s    min=8.93ms   med=1.39s    max=16.59s p(90)=2.79s    p(95)=3.79s   
-    iterations.....................: 32801  78.097102/s
+    iteration_duration.............: avg=1.02s    min=4.96ms   med=897.68ms max=14.5s  p(90)=1.39s    p(95)=2.39s   
+    iterations.....................: 50695  120.70222/s
     vus............................: 1      min=1           max=200
     vus_max........................: 200    min=200         max=200
 
     NETWORK
-    data_received..................: 7.2 GB 17 MB/s
-    data_sent......................: 35 MB  84 kB/s
+    data_received..................: 619 MB 1.5 MB/s
+    data_sent......................: 54 MB  128 kB/s
