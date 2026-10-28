@@ -42,9 +42,9 @@ Kotlin
 
 █ TOTAL RESULTS
 
-    checks_total.......: 566034  1347.698242/s
-    checks_succeeded...: 100.00% 566034 out of 566034
-    checks_failed......: 0.00%   0 out of 566034
+    checks_total.......: 636902  1516.260049/s
+    checks_succeeded...: 100.00% 636902 out of 636902
+    checks_failed......: 0.00%   0 out of 636902
 
     ✓ create: status is 200
     ✓ create: response body matches
@@ -62,28 +62,29 @@ Kotlin
     ✓ read deleted: response body matches
 
     HTTP
-    http_req_duration..............: avg=183.4ms min=254.56µs med=195.94ms max=1.49s p(90)=295.84ms p(95)=300.52ms
-      { expected_response:true }...: avg=183.4ms min=254.56µs med=195.94ms max=1.49s p(90)=295.84ms p(95)=300.52ms
-    http_req_failed................: 0.00%  0 out of 283017
-    http_reqs......................: 283017 673.849121/s
+    http_req_duration..............: avg=162.96ms min=247.55µs med=188.97ms max=1.29s p(90)=289.79ms p(95)=296.98ms
+      { expected_response:true }...: avg=162.96ms min=247.55µs med=188.97ms max=1.29s p(90)=289.79ms p(95)=296.98ms
+    http_req_failed................: 0.00%  0 out of 318451
+    http_reqs......................: 318451 758.130025/s
 
     EXECUTION
-    iteration_duration.............: avg=1.28s   min=4.07ms   med=1.3s     max=3.7s  p(90)=1.69s    p(95)=1.79s   
-    iterations.....................: 40431  96.26416/s
+    iteration_duration.............: avg=1.14s    min=4.04ms   med=1.19s    max=2.69s p(90)=1.59s    p(95)=1.69s   
+    iterations.....................: 45493  108.304289/s
     vus............................: 1      min=1           max=200
     vus_max........................: 200    min=200         max=200
 
     NETWORK
-    data_received..................: 599 MB 1.4 MB/s
-    data_sent......................: 43 MB  103 kB/s
+    data_received..................: 646 MB 1.5 MB/s
+    data_sent......................: 48 MB  115 kB/s
+
 
 Rust
 
 █ TOTAL RESULTS
 
-    checks_total.......: 709730  1689.831087/s
-    checks_succeeded...: 100.00% 709730 out of 709730
-    checks_failed......: 0.00%   0 out of 709730
+    checks_total.......: 862834  2054.363831/s
+    checks_succeeded...: 100.00% 862834 out of 862834
+    checks_failed......: 0.00%   0 out of 862834
 
     ✓ create: status is 200
     ✓ create: response body matches
@@ -101,17 +102,18 @@ Rust
     ✓ read deleted: response body matches
 
     HTTP
-    http_req_duration..............: avg=145.79ms min=263.53µs med=105.74ms max=11.39s p(90)=199.94ms p(95)=203.74ms
-      { expected_response:true }...: avg=145.79ms min=263.53µs med=105.74ms max=11.39s p(90)=199.94ms p(95)=203.74ms
-    http_req_failed................: 0.00%  0 out of 354865
-    http_reqs......................: 354865 844.915543/s
+    http_req_duration..............: avg=120.01ms min=285.36µs med=100.64ms max=15.68s p(90)=194.12ms p(95)=196.63ms
+      { expected_response:true }...: avg=120.01ms min=285.36µs med=100.64ms max=15.68s p(90)=194.12ms p(95)=196.63ms
+    http_req_failed................: 0.00%  0 out of 431417
+    http_reqs......................: 431417 1027.181915/s
 
     EXECUTION
-    iteration_duration.............: avg=1.02s    min=4.96ms   med=897.68ms max=14.5s  p(90)=1.39s    p(95)=2.39s   
-    iterations.....................: 50695  120.70222/s
+    iteration_duration.............: avg=842.69ms min=4.95ms   med=701.16ms max=17.39s p(90)=1.09s    p(95)=2.01s   
+    iterations.....................: 61631  146.740274/s
     vus............................: 1      min=1           max=200
     vus_max........................: 200    min=200         max=200
 
     NETWORK
-    data_received..................: 619 MB 1.5 MB/s
-    data_sent......................: 54 MB  128 kB/s
+    data_received..................: 767 MB 1.8 MB/s
+    data_sent......................: 65 MB  156 kB/s
+
