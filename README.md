@@ -43,38 +43,38 @@ figures are sampled process metrics.
 
 | Metric                     |               C# |           Kotlin |             Rust |
 |----------------------------|-----------------:|-----------------:|-----------------:|
-| HTTP requests              |          379,001 |          319,079 |          435,986 |
-| HTTP requests/s            |           902.16 |           759.26 |     **1,037.79** |
-| Completed iterations       |           54,461 |           45,905 |           62,600 |
-| Iterations/s               |           129.64 |           109.23 |       **149.01** |
-| Average request latency    |        137.02 ms |        162.76 ms |    **118.84 ms** |
-| Median request latency     |        110.12 ms |        188.11 ms |    **101.11 ms** |
-| p90 request latency        |        209.05 ms |        290.97 ms |    **193.90 ms** |
-| p95 request latency        |        225.32 ms |        298.26 ms |    **196.55 ms** |
-| Maximum request latency    |       **2.10 s** |           2.35 s |          15.50 s |
-| Average iteration duration |        961.21 ms |           1.14 s |    **836.13 ms** |
-| p95 iteration duration     |       **1.57 s** |           1.70 s |           2.00 s |
-| Average process CPU usage  |           19.59% |           19.94% |       **19.20%** |
-| Average process RSS        |       135.28 MiB |       213.19 MiB |     **8.21 MiB** |
-| Maximum process RSS        |       143.79 MiB |       280.28 MiB |     **9.63 MiB** |
-| Successful checks          |   758,372 (100%) |   638,533 (100%) |   872,340 (100%) |
+| HTTP requests              |          379,001 |          319,079 |          419,801 |
+| HTTP requests/s            |           902.16 |           759.26 |       **998.99** |
+| Completed iterations       |           54,461 |           45,905 |           60,287 |
+| Iterations/s               |           129.64 |           109.23 |       **143.46** |
+| Average request latency    |        137.02 ms |        162.76 ms |    **123.44 ms** |
+| Median request latency     |        110.12 ms |        188.11 ms |    **100.91 ms** |
+| p90 request latency        |        209.05 ms |        290.97 ms |    **197.51 ms** |
+| p95 request latency        |        225.32 ms |        298.26 ms |    **200.78 ms** |
+| Maximum request latency    |       **2.10 s** |           2.35 s |           5.40 s |
+| Average iteration duration |        961.21 ms |           1.14 s |    **868.39 ms** |
+| p95 iteration duration     |       **1.57 s** |           1.70 s |           2.10 s |
+| Average process CPU usage  |           19.59% |           19.94% |       **18.85%** |
+| Average process RSS        |       135.28 MiB |       213.19 MiB |    **12.49 MiB** |
+| Maximum process RSS        |       143.79 MiB |       280.28 MiB |    **15.25 MiB** |
+| Successful checks          |   758,372 (100%) |   638,533 (100%) |   839,969 (100%) |
 | Failed HTTP requests       |                0 |                0 |                0 |
 
 ### Takeaways
 
-- **Rust had the highest throughput:** 15.0% more requests/s than C# and
-  36.7% more than Kotlin, with the lowest average, median, p90, and p95
+- **Rust had the highest throughput:** 10.7% more requests/s than C# and
+  31.6% more than Kotlin, with the lowest average, median, p90, and p95
   request latency, plus the lowest average iteration duration.
 - **C# ranked second on throughput and led p95 iteration duration:**
-  1.57 s, compared with Kotlin's 1.70 s and Rust's 2.00 s. C# also handled
+  1.57 s, compared with Kotlin's 1.70 s and Rust's 2.10 s. C# also handled
   18.8% more requests/s than Kotlin and had the lowest maximum request
   latency (2.10 s).
 - **Kotlin had lower latency spikes than Rust, but the lowest throughput:**
-  its maximum request latency was 2.35 s, compared with Rust's 15.50 s.
+  its maximum request latency was 2.35 s, compared with Rust's 5.40 s.
   Rust's low p95 request latency did not prevent large latency spikes.
 - **Rust had the smallest memory footprint:** average process RSS was
-  8.21 MiB, compared with 135.28 MiB for C# and 213.19 MiB for Kotlin.
+  12.49 MiB, compared with 135.28 MiB for C# and 213.19 MiB for Kotlin.
   Average reported process CPU usage was similar across all three
-  (19.20% to 19.94%).
+  (18.85% to 19.94%).
 - **All three passed every check with zero HTTP failures.** These results
   describe the recorded local runs, not a general ranking of the languages.
