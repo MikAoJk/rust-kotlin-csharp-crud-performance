@@ -25,7 +25,9 @@ The runs have been done locally on my machine.
 ### Workload
 
 Each application ran the same k6 workload for seven minutes, ramping up to
-200 virtual users before ramping down. Each completed iteration made seven
+200 CRUD virtual users before ramping down, with an additional virtual user
+collecting process CPU and memory metrics (201 virtual users in total).
+Each completed CRUD iteration made seven
 requests: create, list, read, update, read updated, delete, and read deleted.
 The final request expected a 404 response, which counted as a successful check,
 not an HTTP failure.
@@ -34,35 +36,45 @@ not an HTTP failure.
 
 Throughput is the average across the whole test, including ramp-up and ramp-down.
 Higher throughput is better; lower latency is better. Request latency refers to
-k6's `http_req_duration`; iteration duration covers the full seven-request cycle.
+k6's `http_req_duration`. HTTP and execution metrics are the aggregate values
+reported by k6, including monitoring requests and iterations, so completed
+iterations are not exclusively CRUD cycles. CPU and resident memory (RSS)
+figures are sampled process metrics.
 
 | Metric                     |               C# |           Kotlin |             Rust |
 |----------------------------|-----------------:|-----------------:|-----------------:|
-| HTTP requests              |           96,803 |          318,451 |          431,417 |
-| HTTP requests/s            |           230.36 |           758.13 |     **1,027.18** |
-| Completed CRUD iterations  |           13,829 |           45,493 |           61,631 |
-| CRUD iterations/s          |            32.91 |           108.30 |       **146.74** |
-| Average request latency    |        538.77 ms |        162.96 ms |    **120.01 ms** |
-| Median request latency     |        301.28 ms |        188.97 ms |    **100.64 ms** |
-| p90 request latency        |           1.69 s |        289.79 ms |    **194.12 ms** |
-| p95 request latency        |           2.29 s |        296.98 ms |    **196.63 ms** |
-| Maximum request latency    |           7.90 s |       **1.29 s** |          15.68 s |
-| Average iteration duration |           3.77 s |           1.14 s |    **842.69 ms** |
-| p95 iteration duration     |           7.50 s |       **1.69 s** |           2.01 s |
-| Successful checks          |   193,606 (100%) |   636,902 (100%) |   862,834 (100%) |
+| HTTP requests              |          379,001 |          319,079 |          435,986 |
+| HTTP requests/s            |           902.16 |           759.26 |     **1,037.79** |
+| Completed iterations       |           54,461 |           45,905 |           62,600 |
+| Iterations/s               |           129.64 |           109.23 |       **149.01** |
+| Average request latency    |        137.02 ms |        162.76 ms |    **118.84 ms** |
+| Median request latency     |        110.12 ms |        188.11 ms |    **101.11 ms** |
+| p90 request latency        |        209.05 ms |        290.97 ms |    **193.90 ms** |
+| p95 request latency        |        225.32 ms |        298.26 ms |    **196.55 ms** |
+| Maximum request latency    |       **2.10 s** |           2.35 s |          15.50 s |
+| Average iteration duration |        961.21 ms |           1.14 s |    **836.13 ms** |
+| p95 iteration duration     |       **1.57 s** |           1.70 s |           2.00 s |
+| Average process CPU usage  |           19.59% |           19.94% |       **19.20%** |
+| Average process RSS        |       135.28 MiB |       213.19 MiB |     **8.21 MiB** |
+| Maximum process RSS        |       143.79 MiB |       280.28 MiB |     **9.63 MiB** |
+| Successful checks          |   758,372 (100%) |   638,533 (100%) |   872,340 (100%) |
 | Failed HTTP requests       |                0 |                0 |                0 |
 
 ### Takeaways
 
-- **Rust had the highest throughput:** 4.46 times C#'s requests/s and
-  35.5% more than Kotlin's, with the lowest average, median, p90, and p95
+- **Rust had the highest throughput:** 15.0% more requests/s than C# and
+  36.7% more than Kotlin, with the lowest average, median, p90, and p95
   request latency, plus the lowest average iteration duration.
-- **Kotlin had the lowest maximum request latency and p95 iteration duration:**
-  1.29 s and 1.69 s, respectively, compared with Rust's 15.68 s and 2.01 s.
-  Kotlin also handled 3.29 times C#'s requests/s, with lower latency across
-  every request and iteration metric in the table.
-- **Rust had the largest latency spikes:** its maximum request latency was
-  15.68 s, compared with 7.90 s for C# and 1.29 s for Kotlin, despite having
-  the lowest p95 request latency.
+- **C# ranked second on throughput and led p95 iteration duration:**
+  1.57 s, compared with Kotlin's 1.70 s and Rust's 2.00 s. C# also handled
+  18.8% more requests/s than Kotlin and had the lowest maximum request
+  latency (2.10 s).
+- **Kotlin had lower latency spikes than Rust, but the lowest throughput:**
+  its maximum request latency was 2.35 s, compared with Rust's 15.50 s.
+  Rust's low p95 request latency did not prevent large latency spikes.
+- **Rust had the smallest memory footprint:** average process RSS was
+  8.21 MiB, compared with 135.28 MiB for C# and 213.19 MiB for Kotlin.
+  Average reported process CPU usage was similar across all three
+  (19.20% to 19.94%).
 - **All three passed every check with zero HTTP failures.** These results
   describe the recorded local runs, not a general ranking of the languages.
