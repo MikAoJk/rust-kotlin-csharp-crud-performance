@@ -2,14 +2,14 @@ C#
 
 █ TOTAL RESULTS
 
-    checks_total.......: 758372  1805.197158/s
-    checks_succeeded...: 100.00% 758372 out of 758372
-    checks_failed......: 0.00%   0 out of 758372
+    checks_total.......: 670044  1594.569186/s
+    checks_succeeded...: 100.00% 670044 out of 670044
+    checks_failed......: 0.00%   0 out of 670044
 
-    ✓ metrics: status is 200
-    ✓ metrics: valid process resource sample
     ✓ create: status is 200
+    ✓ metrics: status is 200
     ✓ create: response body matches
+    ✓ metrics: valid process resource sample
     ✓ list: status is 200
     ✓ list: created user has a unique ID
     ✓ read: status is 200
@@ -25,34 +25,34 @@ C#
     ✓ metrics: same process and increasing counters
 
     CUSTOM
-    api_cpu_samples................: 370    0.880733/s
-    api_cpu_usage_percent..........: min=2.211123 avg=19.591532  max=21.48618   med=19.896633  p(90)=20.597363 p(95)=20.790782 
-    api_memory_rss_mib.............: min=100.125  avg=135.279134 max=143.792969 med=134.957031 p(90)=142.90625 p(95)=142.957031
+    api_cpu_samples................: 332    0.790093/s
+    api_cpu_usage_percent..........: min=2.923991   avg=19.313411  max=21.377512  med=19.872746  p(90)=20.555918  p(95)=20.75076 
+    api_memory_rss_mib.............: min=100.089844 avg=140.335468 max=158.765625 med=135.304688 p(90)=157.589844 p(95)=158.09375
 
     HTTP
-    http_req_duration..............: min=155.18µs avg=137.02ms   max=2.1s       med=110.12ms   p(90)=209.05ms  p(95)=225.32ms  
-      { expected_response:true }...: min=155.18µs avg=137.02ms   max=2.1s       med=110.12ms   p(90)=209.05ms  p(95)=225.32ms  
-    http_req_failed................: 0.00%  0 out of 379001
-    http_reqs......................: 379001 902.158212/s
+    http_req_duration..............: min=342.43µs   avg=304.6ms    max=2.78s      med=119.49ms   p(90)=691.72ms   p(95)=787.67ms 
+      { expected_response:true }...: min=342.43µs   avg=304.6ms    max=2.78s      med=119.49ms   p(90)=691.72ms   p(95)=787.67ms 
+    http_req_failed................: 0.00%  0 out of 334856
+    http_reqs......................: 334856 796.889547/s
 
     EXECUTION
-    iteration_duration.............: min=2.63ms   avg=961.21ms   max=3.19s      med=877.75ms   p(90)=1.41s     p(95)=1.57s     
-    iterations.....................: 54461  129.636699/s
-    vus............................: 2      min=2           max=201
-    vus_max........................: 201    min=201         max=201
+    iteration_duration.............: min=4.87ms     avg=2.12s      max=7.38s      med=904.41ms   p(90)=4.7s       p(95)=5.19s    
+    iterations.....................: 48122  114.520626/s
+    vus............................: 3      min=2           max=501
+    vus_max........................: 501    min=501         max=501
 
     NETWORK
-    data_received..................: 744 MB 1.8 MB/s
-    data_sent......................: 57 MB  137 kB/s
+    data_received..................: 1.1 GB 2.7 MB/s
+    data_sent......................: 51 MB  121 kB/s
 
     
 Kotlin
 
 █ TOTAL RESULTS
 
-    checks_total.......: 638533  1519.410715/s
-    checks_succeeded...: 100.00% 638533 out of 638533
-    checks_failed......: 0.00%   0 out of 638533
+    checks_total.......: 601104  1430.031947/s
+    checks_succeeded...: 100.00% 601104 out of 601104
+    checks_failed......: 0.00%   0 out of 601104
 
     ✓ create: status is 200
     ✓ create: response body matches
@@ -73,25 +73,25 @@ Kotlin
     ✓ metrics: same process and increasing counters
 
     CUSTOM
-    api_cpu_samples................: 375    0.892325/s
-    api_cpu_usage_percent..........: min=17.537467  avg=19.940198  max=22.862746  med=19.972306  p(90)=20.956533  p(95)=21.626474 
-    api_memory_rss_mib.............: min=140.054688 avg=213.189744 max=280.277344 med=182.685547 p(90)=280.207031 p(95)=280.242188
+    api_cpu_samples................: 340    0.808863/s
+    api_cpu_usage_percent..........: min=18.083877  avg=19.856599  max=21.959858  med=19.940062  p(90)=20.917086  p(95)=20.965008 
+    api_memory_rss_mib.............: min=137.902344 avg=213.772429 max=280.371094 med=181.792969 p(90)=280.296875 p(95)=280.332031
 
     HTTP
-    http_req_duration..............: min=224.81µs   avg=162.76ms   max=2.35s      med=188.11ms   p(90)=290.97ms   p(95)=298.26ms  
-      { expected_response:true }...: min=224.81µs   avg=162.76ms   max=2.35s      med=188.11ms   p(90)=290.97ms   p(95)=298.26ms  
-    http_req_failed................: 0.00%  0 out of 319079
-    http_reqs......................: 319079 759.259195/s
+    http_req_duration..............: min=314.48µs   avg=339.3ms    max=1.99s      med=295.28ms   p(90)=687.85ms   p(95)=710.73ms  
+      { expected_response:true }...: min=314.48µs   avg=339.3ms    max=1.99s      med=295.28ms   p(90)=687.85ms   p(95)=710.73ms  
+    http_req_failed................: 0.00%  0 out of 300382
+    http_reqs......................: 300382 714.611542/s
 
     EXECUTION
-    iteration_duration.............: min=3.76ms     avg=1.14s      max=3.59s      med=1.18s      p(90)=1.59s      p(95)=1.7s      
-    iterations.....................: 45905  109.232489/s
-    vus............................: 2      min=2           max=201
-    vus_max........................: 201    min=201         max=201
+    iteration_duration.............: min=4.63ms     avg=2.36s      max=7.4s       med=1.8s       p(90)=4.5s       p(95)=4.79s     
+    iterations.....................: 43204  102.782714/s
+    vus............................: 2      min=2           max=501
+    vus_max........................: 501    min=501         max=501
 
     NETWORK
-    data_received..................: 644 MB 1.5 MB/s
-    data_sent......................: 48 MB  115 kB/s
+    data_received..................: 1.2 GB 2.7 MB/s
+    data_sent......................: 46 MB  108 kB/s
 
 
 
@@ -99,9 +99,9 @@ Rust
 
 █ TOTAL RESULTS
 
-    checks_total.......: 839969  1998.857172/s
-    checks_succeeded...: 100.00% 839969 out of 839969
-    checks_failed......: 0.00%   0 out of 839969
+    checks_total.......: 818594  1946.353926/s
+    checks_succeeded...: 100.00% 818594 out of 818594
+    checks_failed......: 0.00%   0 out of 818594
 
     ✓ metrics: status is 200
     ✓ metrics: valid process resource sample
@@ -122,22 +122,22 @@ Rust
     ✓ metrics: same process and increasing counters
 
     CUSTOM
-    api_cpu_samples................: 367    0.873342/s
-    api_cpu_usage_percent..........: min=15.872794 avg=18.84741  max=21.834256 med=18.987277 p(90)=19.975004 p(95)=20.820822
-    api_memory_rss_mib.............: min=6.027344  avg=12.486052 max=15.25     med=12.355469 p(90)=15.206641 p(95)=15.238281
+    api_cpu_samples................: 396    0.941561/s
+    api_cpu_usage_percent..........: min=16.444364 avg=19.184388 max=21.906125 med=19.118409 p(90)=20.784132 p(95)=20.907359
+    api_memory_rss_mib.............: min=5.714844  avg=14.272936 max=19.621094 med=12.410156 p(90)=19.478125 p(95)=19.527344
 
     HTTP
-    http_req_duration..............: min=247.5µs   avg=123.44ms  max=5.4s      med=100.91ms  p(90)=197.51ms  p(95)=200.78ms 
-      { expected_response:true }...: min=247.5µs   avg=123.44ms  max=5.4s      med=100.91ms  p(90)=197.51ms  p(95)=200.78ms 
-    http_req_failed................: 0.00%  0 out of 419801
-    http_reqs......................: 419801 998.991915/s
+    http_req_duration..............: min=288.01µs  avg=248.49ms  max=993.13ms  med=102.06ms  p(90)=600.64ms  p(95)=618.47ms 
+      { expected_response:true }...: min=288.01µs  avg=248.49ms  max=993.13ms  med=102.06ms  p(90)=600.64ms  p(95)=618.47ms 
+    http_req_failed................: 0.00%  0 out of 409099
+    http_reqs......................: 409099 972.706183/s
 
     EXECUTION
-    iteration_duration.............: min=4.62ms    avg=868.39ms  max=9.29s     med=790.83ms  p(90)=1.2s      p(95)=2.1s     
-    iterations.....................: 60287  143.46375/s
-    vus............................: 2      min=2           max=201
-    vus_max........................: 201    min=201         max=201
+    iteration_duration.............: min=5ms       avg=1.73s     max=5.2s      med=701.84ms  p(90)=4.19s     p(95)=4.29s    
+    iterations.....................: 58783  139.767116/s
+    vus............................: 3      min=2           max=501
+    vus_max........................: 501    min=501         max=501
 
     NETWORK
-    data_received..................: 742 MB 1.8 MB/s
-    data_sent......................: 64 MB  151 kB/s
+    data_received..................: 1.3 GB 3.0 MB/s
+    data_sent......................: 62 MB  147 kB/s
