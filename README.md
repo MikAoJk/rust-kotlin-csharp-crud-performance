@@ -15,9 +15,9 @@ https://github.com/MikAoJk/rust-crud-rest-api
 
 ### Performance runs
 All the application above have been run with the same performance-test suit, see:
-https://github.com/MikAoJk/csharp-crud-rest-api/tree/main/performance-test
-https://github.com/MikAoJk/rust-crud-rest-api/tree/main/performance-test
-https://github.com/MikAoJk/kotlin-ktor-crud-rest-api/tree/main/performance-test
+- C# https://github.com/MikAoJk/csharp-crud-rest-api/tree/main/performance-test
+- Kotlin https://github.com/MikAoJk/rust-crud-rest-api/tree/main/performance-test
+- Rust https://github.com/MikAoJk/kotlin-ktor-crud-rest-api/tree/main/performance-test
 
 The runs have been done locally on my machine.
 [RUNS](RUNS.md)
